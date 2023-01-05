@@ -1,1 +1,1 @@
-# github-self-hosted-runner-azure-create-action
+# terraform-apply-azure-action
