@@ -14,9 +14,6 @@ inputs:
   dir:
     description: "terraform directory"
     required: true
-  azure_environment:
-    description: "Azure Environment"
-    required: true
 
 runs:
   using: "composite"
@@ -43,6 +40,6 @@ runs:
 
           cd ${{ inputs.dir }}
 
-          terraform apply -lock-timeout=3000s -auto-approve -input=false tfplan-${{ inputs.azure_environment }}
+          terraform apply -lock-timeout=3000s -auto-approve -input=false tfplan-${{ github.run_id }}
 
-          rm -rf tfplan-${{ inputs.azure_environment }}
+          rm -rf tfplan-${{ github.run_id }}
