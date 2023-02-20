@@ -40,6 +40,6 @@ runs:
 
           cd ${{ inputs.dir }}
 
-          terraform apply -lock-timeout=3000s -auto-approve -input=false tfplan-${{ github.run_id }}
+          terraform apply -lock-timeout=3000s -auto-approve -input=false tfplan-${{ github.sha }}
 
-          rm -rf tfplan-${{ github.run_id }}
+          rm -rf tfplan-${{ github.sha }}
